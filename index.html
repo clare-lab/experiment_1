@@ -1,1 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Birthday Website</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
 
+   
+<div class="screen active" id="screen1">
+    <h1 id="introText"></h1> 
+    <p>Psychological assessment ready.</p>
+    <button onclick="goToScreen('screen2')">Begin</button>
+</div>
+
+<div class="screen" id="screen2">
+    <h1>Question 1. Looking at the image, what do you see?</h1>
+
+    <img class="inkblot" src="inkblot.png" alt="Rorschach inkblot">
+
+    <button onclick="showWrong()">a butterfly</button>
+    <button onclick="showWrong()">a bat</button>
+    <button onclick="showWrong()">a face</button>
+    <button onclick="revealInkblot()">something suspicious...</button>
+
+    <p id="wrongText"></p>
+</div>
+
+<div class="screen" id="wrongScreen">
+    <h1 class="wrong-text">INCORRECT RESPONSE. </h1> 
+<p class="wrong-subtext">recalibrating psychological standards...</p>
+</div>
+
+<div class="screen" id="screen3">
+   <div class="zoom-container">
+    <img src="cabbageReveal.png" class="zoom-image" alt="Cabbage man reveal">
+   </div>
+   <p id="cabbageText"> it was the cabbage merchant! </p>
+
+   <button id="afterZoomButton" onclick="goToScreen('screen8')">
+    Continue
+</button>
+
+</div>
+
+<div class="screen" id="screen4">
+    <h1>Question 2</h1>
+    <p>is it your birthday?</p>
+
+    <button onclick="goToScreen('screen5')">yes</button>
+    <button onclick="goToScreen('screen5')">super yes</button>
+</div>
+
+<div class="screen" id="screen5">
+    <h1>Question 2</h1>
+    <p>WHO is the smartest, most compassionate, most altruistic, most loving, most loyal, did i mention smartest?? sister EVER?</p>
+
+    <button onclick="goToScreen('screen6')">clare</button>
+    <button onclick="goToScreen('screen6')">clare but with more enthusiasm</button>
+</div>
+
+<div class="screen" id="screen6">
+    <h1>processing results...</h1>
+    <p id="loadingText">analysing subject...</p>
+</div>
+
+<div class="screen" id="screen7">
+    <h1>Diagnosis</h1>
+    <p class="diagnosis"> .</p>
+
+    <p class="message">
+        To Christy, looking past your diagnosis, you are genuinely my favourite person.
+    </p>
+</div>
+
+<div class="screen" id="screen8"
+<h1> note: subject mistook the cabbage merchant for rorschach inkblot, symptom of schizophrenia?</h1>
+<button onclick="goToScreen('screen4')">Continue</button>
+</div> 
+
+<script src="script.js"></script>
+    </body>
+</html>

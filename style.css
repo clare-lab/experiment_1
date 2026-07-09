@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.screen {
+    display: none;
+    height: 100vh;
+    padding: 30px;
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.screen.active {
+    display: flex;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+p {
+    font-size: 18px;
+    max-width: 330px;
+    line-height: 1.5;
+}
+
+button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 14px 22px;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    max-width: 300px;
+}
+
+.inkblot {
+    width: 220px;
+    max-width: 80vw;
+    animation: pulse 2s infinite;
+}
+
+.wrong-text {
+    color: rgb(169, 0, 0);
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.wrong-subtext {
+    color: rgb(169, 0, 0);
+}
+
+#screen3 {
+    padding: 0;
+    gap: 0;
+}
+
+.zoom-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.zoom-image {
+    width: 1500px;
+    max-width: none;
+    transform-origin: 25% 80%;
+    transform: scale(8);
+    animation: zoomOutReveal 6s ease-in-out forwards;
+}
+
+#afterZoomButton {
+    position: absolute;
+    bottom: 30px;
+    opacity: 0;
+    animation: showButton 1s ease forwards;
+    animation-delay: 6s;
+}
+
+.diagnosis {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.message {
+    font-size: 17px;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+@keyframes zoomOutReveal {
+    0% {
+        transform: scale(8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes showButton {
+    to {
+        opacity: 1;
+    }
+}
+
+#cabbageText {
+    color: black;
+    position: absolute;
+    top: 100px;
+    font-size: 50px;
+    font-weight: bold;
+    opacity: 0;
+    animation: showText 1s forwards;
+    animation-delay: 5.5s;
+}
+
+@keyframes showText {
+    to {
+        opacity: 1;
+    }
+}
